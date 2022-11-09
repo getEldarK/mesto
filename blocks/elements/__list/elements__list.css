@@ -1,7 +1,11 @@
 .elements__list {
   margin: 0 auto;
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 17px 1fr 17px 1fr;
   grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 17px;
+  -moz-column-gap: 17px;
   column-gap: 17px;
   row-gap: 20px;
   padding: 0;

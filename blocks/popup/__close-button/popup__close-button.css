@@ -1,4 +1,6 @@
 .popup__close-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-image: url(../../../images/close_icon_popup.png);
   position: absolute;

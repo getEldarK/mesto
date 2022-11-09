@@ -1,4 +1,6 @@
 .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
   margin: 0 auto;
@@ -8,14 +10,18 @@
   width: 100%;
   padding-top: 36.25px;
 }
+
 @media screen and (max-width: 767px) {
   .profile {
     margin: auto;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     max-width: 282px;
     height: 286px;
     padding-top: 42px;
-}
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

@@ -1,6 +1,8 @@
 .elements__like-button {
   position: absolute;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   right: 20px;
   bottom: 30px;
   background-image: url(../../../images/like_button.svg);
@@ -21,4 +23,3 @@ opacity: 0.5;
   opacity: 1;
   background-image: url(../../../images/like_button_black.png);
 }
-
