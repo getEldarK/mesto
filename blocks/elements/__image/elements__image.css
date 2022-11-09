@@ -1,0 +1,9 @@
+.elements__image {
+position: absolute;
+top: 0;
+display: flex;
+width: 282px;
+height: 282px;
+object-fit: cover;
+object-position: 70% 0;
+}

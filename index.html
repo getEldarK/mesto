@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>сервис Mesto</title>
+	<link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+  <header class="header">
+    <img class="header__logo" src="./images/logo_mesto_header.png" alt="Логотип сервиса Место">
+  </header>
+  <main>
+    <section class="profile">
+      <img class="profile__image" src="./images/kusto_image.jpg" alt="Фотография Жак-Ива Кусто">
+      <div class="profile__info">
+        <h1 class="profile__name">Жак-Ив Кусто
+          <button class="profile__button-edit">
+            <img class="profile__button-image" src="./images/pencil.png" alt="элемент редактирования карандаш">
+          </button>
+      </h1>
+        </button>
+        <p class="profile__occupation">Исследователь океана</p>
+      </div>
+      <button class="profile__add-button">
+        <img class="profile__add-button-vector" src="./images/plus_veclor_button.png" alt="элемент кнопка добавить">
+      </button>
+    </section>
+    <section class="elements">
+      <ul class="elements__list">
+        <li class="elements__items">
+          <div class="elements__item">
+            <img class="elements__image" src="./images/istambul.jpg" alt="фото города стамбул">
+            <h2 class="elements__title">Стамбул</h2>
+            <button class="elements__like-button"></button>
+          </div>
+        </li>
+        <li class="elements__items">
+          <div class="elements__item">
+            <img class="elements__image" src="./images/maidstone_kent.jpg" alt="фото города мэйдстон">
+            <h2 class="elements__title">Мейдстон</h2> 
+            <button class="elements__like-button"></button> 
+          </div>
+        </li>
+        <li class="elements__items">
+          <div class="elements__item">
+            <img class="elements__image" src="./images/plymouth_devon.jpg" alt="фото города плимут">
+            <h2 class="elements__title">Плимут</h2>
+            <button class="elements__like-button"></button>
+          </div>
+        </li>
+        <li class="elements__items">
+          <div class="elements__item">
+            <img class="elements__image" src="./images/glenfinnan_viaduct.jpg" alt="фото виадука гленфиннан">
+            <h2 class="elements__title">Виадук Гленфиннан</h2>
+            <button class="elements__like-button"></button>
+          </div>  
+        </li>
+        <li class="elements__items">
+          <div class="elements__item">
+            <img class="elements__image" src="./images/old_man_of_storr.jpg" alt="фото горы старик сторр">
+            <h2 class="elements__title">Гора Старик-Сторр</h2>
+            <button class="elements__like-button"></button>
+          </div>
+        </li>
+        <li class="elements__items">
+          <div class="elements__item">
+            <img class="elements__image" src="./images/anglesey_south_stack.jpg" alt="фото маяк в городе Англси">
+            <h2 class="elements__title">Маяк Англси</h2>
+            <button class="elements__like-button"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">© 2022 Mesto Russia</p>
+  </footer>
+  <div class="popup__form">
+    <form class="popup">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <div class="popup__close-button"></div>
+      <label>
+        <input type="text" placeholder="Имя" id="name">
+      </label>
+      <label>
+        <input type="text" placeholder="О себе" id="job">
+      </label>
+      <button type="submit" id="submitid">Сохранить</button>
+    </form>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
