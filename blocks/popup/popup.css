@@ -1,6 +1,9 @@
 .popup {
   position: absolute;
-  top: 195px; left: 0; bottom: 0; right: 0;
+  top: 195px;
+  left: 0;
+  bottom: 0;
+  right: 0;
   margin: 0 auto;
   background: #fff;
   width: 430px;
@@ -51,7 +54,7 @@
 }
 ::placeholder {
   color:  #000;
-} 
+}
 
 .popup button {
   width: 358px;
