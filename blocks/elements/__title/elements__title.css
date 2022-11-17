@@ -1,14 +1,11 @@
 .elements__title {
-  position: absolute;
-  left: 21px;
-  bottom: 30px;
   color: #000000;
   font-size: 24px;
   font-weight: 900;
   line-height: 29.05px;
   margin: 0;
   padding: 0;
-  max-width: 200px;
+  width: 200px;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
   white-space: nowrap;
