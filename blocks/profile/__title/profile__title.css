@@ -15,10 +15,8 @@
 
   @media screen and (max-width: 767px) {
     .profile__title {
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      width: 282px;
+      margin-left: 30px;
+      width: 218px;
     }
    }
 

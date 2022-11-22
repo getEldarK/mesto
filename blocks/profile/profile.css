@@ -6,7 +6,7 @@
   position: relative;
   margin: 0 auto;
   max-width: 880px;
-  height: 120px;
+  min-height: 120px;
   font-family: 'Inter', Arial, sans-serif;
   width: 100%;
   padding-top: 36.25px;
@@ -20,7 +20,7 @@
         -ms-flex-direction: column;
             flex-direction: column;
     max-width: 282px;
-    height: 286px;
+    min-height: 286px;
     padding-top: 42px;
   }
 }
@@ -29,7 +29,7 @@
   .profile {
     margin: auto;
     max-width: 581px;
-    height: 206px;
+    min-height: 206px;
     padding-top: 42px;
   }
 }
