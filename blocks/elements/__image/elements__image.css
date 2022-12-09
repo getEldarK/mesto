@@ -8,4 +8,5 @@
      object-fit: cover;
   -o-object-position: 70% 0;
      object-position: 70% 0;
+   cursor: pointer;
   }

@@ -1,4 +1,5 @@
 .elements__items {
+  position: relative;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 10px;

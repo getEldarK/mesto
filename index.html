@@ -27,48 +27,7 @@
     </section>
     <section class="elements">
       <ul class="elements__list">
-        <li class="elements__items">
-          <img class="elements__image" src="./images/istambul.jpg" alt="фото города стамбул">
-          <div class="elements__item">
-            <h2 class="elements__title">Стамбул</h2>
-            <button class="elements__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="elements__items">
-          <img class="elements__image" src="./images/maidstone_kent.jpg" alt="фото города мэйдстон">
-          <div class="elements__item">
-            <h2 class="elements__title">Мейдстон</h2> 
-            <button class="elements__like-button" type="button"></button> 
-          </div>
-        </li>
-        <li class="elements__items">
-          <img class="elements__image" src="./images/plymouth_devon.jpg" alt="фото города плимут">
-          <div class="elements__item">
-            <h2 class="elements__title">Плимут</h2>
-            <button class="elements__like-button" type="button"></button>
-          </div>  
-        </li>
-        <li class="elements__items">
-          <img class="elements__image" src="./images/glenfinnan_viaduct.jpg" alt="фото виадука гленфиннан">
-          <div class="elements__item">
-            <h2 class="elements__title">Виадук Гленфиннан</h2>
-            <button class="elements__like-button" type="button"></button>
-          </div> 
-        </li>
-        <li class="elements__items">
-          <img class="elements__image" src="./images/old_man_of_storr.jpg" alt="фото горы старик сторр">
-          <div class="elements__item">
-            <h2 class="elements__title">Гора Старик-Сторр</h2>
-            <button class="elements__like-button" type="button"></button>
-          </div>
-        </li>
-        <li class="elements__items">
-          <img class="elements__image" src="./images/anglesey_south_stack.jpg" alt="фото маяк в городе Англси">
-          <div class="elements__item">
-            <h2 class="elements__title">Маяк Англси</h2>
-            <button class="elements__like-button" type="button"></button>
-          </div>  
-        </li>
+        
       </ul>
     </section>
   </main>
@@ -85,6 +44,24 @@
         <button class="popup__submit-button" type="submit" id="submitid">Сохранить</button>
       </form>
     </div>  
+  </section>
+  <section class="second-popup">
+    <div class="second-popup__container">
+      <h2 class="second-popup__title">Новое место</h2>
+      <button class="second-popup__close-button" type="button"></button>
+      <form class="second-popup__form" name="myForm"> 
+        <input class="second-popup__form-input" type="text" placeholder="Название" name="name" id="inputPlaceName" />
+        <input class="second-popup__form-input" type="text" placeholder="Ссылка на картинку" name="job" id="inputLink" />
+        <button class="second-popup__submit-button" type="submit" id="submitid">Сохранить</button>
+      </form>
+    </div>  
+  </section>
+  <section class="img-popup">
+    <div class="img-popup__container">
+      <button class="img-popup__close-button" type="button"></button>
+      <img class="img-popup__picture">
+      <h3 class="img-popup__title"></h3>
+    </div>
   </section>
   <script src="./script.js"></script>
 </body>
