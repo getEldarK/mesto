@@ -34,35 +34,46 @@
   <footer class="footer">
     <p class="footer__copyright">© 2022 Mesto Russia</p>
   </footer>
-  <section class="popup">
+  <section class="popup popup_edit-profile">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
       <button class="popup__close-button" type="button"></button>
-      <form class="popup__form" name="myForm"> 
+      <form class="popup__form" name="myForm" id="popupEditForm"> 
         <input class="popup__form-input" type="text" placeholder="Имя" name="name" id="inputName" />
         <input class="popup__form-input" type="text" placeholder="О себе" name="job" id="inputJob" />
-        <button class="popup__submit-button" type="submit" id="submitid">Сохранить</button>
+        <button class="popup__submit-button" type="submit" id="popupEditSubmit">Сохранить</button>
       </form>
     </div>  
   </section>
-  <section class="second-popup">
-    <div class="second-popup__container">
-      <h2 class="second-popup__title">Новое место</h2>
-      <button class="second-popup__close-button" type="button"></button>
-      <form class="second-popup__form" name="myForm"> 
-        <input class="second-popup__form-input" type="text" placeholder="Название" name="name" id="inputPlaceName" />
-        <input class="second-popup__form-input" type="text" placeholder="Ссылка на картинку" name="job" id="inputLink" />
-        <button class="second-popup__submit-button" type="submit" id="idsubmit">Сохранить</button>
+  <section class="popup popup_add-card">
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <button class="popup__close-button" type="button"></button>
+      <form class="popup__form" name="myForm" id="popupAddForm"> 
+        <input class="popup__form-input" type="text" placeholder="Название" name="name" id="inputPlaceName" />
+        <input class="popup__form-input" type="text" placeholder="Ссылка на картинку" name="job" id="inputLink" />
+        <button class="popup__submit-button" type="submit" id="popupAddSubmit">Сохранить</button>
       </form>
     </div>  
   </section>
-  <section class="img-popup">
-    <div class="img-popup__container">
-      <button class="img-popup__close-button" type="button"></button>
-      <img class="img-popup__picture">
-      <h3 class="img-popup__title"></h3>
+  <section class="popup popup_open-img">
+    <div class="popup__img-container">
+      <button class="popup__close-button" type="button" id="closeButton"></button>
+      <img class="popup__picture">
+      <h3 class="popup__img-title"></h3>
     </div>
   </section>
-  <script src="./script.js"></script>
+  <template id="template">
+    <li class="elements__items">
+      <img class="elements__image">
+      <div class="elements__item">
+        <h2 class="elements__title"></h2>
+        <button class="elements__like-button" type="button"></button>
+      </div>
+      <button class="elements__delete-button" type="button"></button>
+    </li>
+  </template>
+  <script src="./scripts/constants.js"></script>
+  <script src="./scripts/script.js"></script>
 </body>
 </html>

@@ -19,19 +19,19 @@
   overflow: hidden;
 }
 ::-webkit-input-placeholder {
-  color: #000;
+  color: grey;
 }
 ::-moz-placeholder {
-  color:  #000;
+  color: grey;
 }
 :-ms-input-placeholder {
-  color:  #000;
+  color: grey;
 }
 ::-ms-input-placeholder {
-  color:  #000;
+  color: grey;
 }
 ::placeholder {
-  color:  #000;
+  color: grey;
 }
 
 @media screen and (max-width: 767px) {
