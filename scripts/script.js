@@ -63,7 +63,8 @@
     const templateCardsTitle = templateCards.querySelector('.elements__title');
     templateCardsTitle.textContent = item.name;
     const templateCardsImage = templateCards.querySelector('.elements__image');
-    templateCardsImage.setAttribute('src', item.link, 'alt', 'users photo place');
+    templateCardsImage.setAttribute('src', item.link);
+    templateCardsImage.setAttribute('alt', 'users photo place');
     templateCardsImage.addEventListener('click', () => openImgPopup(item));
     return templateCards;
   }  
@@ -86,7 +87,8 @@
 // функция открывает форму с увеличенным изображением карточки 
   const openImgPopup = (card) => {
     openPopup(popupOpenImage);
-    popupPicture.setAttribute('src', card.link, 'alt', 'users photo place');
+    popupPicture.setAttribute('src', card.link);
+    popupPicture.setAttribute('alt', 'users photo place');
     titlePopupPicture.textContent = card.name;
   }
   
@@ -102,8 +104,7 @@
 // открываем форму добавления новой карточки
   addCardButton.addEventListener('click', function () {
     openPopup(popupAddCard);
-    addCardNameValue.value = '';
-    addCardLinkValue.value = '';
+    addPopupForm.reset();
   })
 
 // вешаем обработчик событий для всех кнопок закрытия формы
