@@ -26,6 +26,18 @@
 // универсальная функция открытия попаов
   function openPopup (popup) {
     popup.classList.add('popup_is-opened');
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape") {
+        closePopup (popup);
+      }
+    })
+
+    popup.addEventListener('click', (e) => {
+      if(!e.target.closest('.popup__container')) {
+        closePopup (popup);
+      }
+    })
 }
 
 // универсальная функция закрытия попапов 

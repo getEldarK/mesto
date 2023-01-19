@@ -39,8 +39,10 @@
       <h2 class="popup__title">Редактировать профиль</h2>
       <button class="popup__close-button" type="button"></button>
       <form class="popup__form" name="myForm" id="popupEditForm"> 
-        <input class="popup__form-input" type="text" placeholder="Имя" name="name" id="inputName" />
-        <input class="popup__form-input" type="text" placeholder="О себе" name="job" id="inputJob" />
+        <input class="popup__form-input" type="text" placeholder="Имя" name="name" id="inputName" minlength="2" maxlength="40" required/>
+        <span id="inputName-error" class="error"></span>
+        <input class="popup__form-input" type="text" placeholder="О себе" name="job" id="inputJob" minlength="2" maxlength="200" required/>
+        <span id="inputJob-error" class="error"></span>
         <button class="popup__submit-button" type="submit" id="popupEditSubmit">Сохранить</button>
       </form>
     </div>  
@@ -50,8 +52,10 @@
       <h2 class="popup__title">Новое место</h2>
       <button class="popup__close-button" type="button"></button>
       <form class="popup__form" name="myForm" id="popupAddForm"> 
-        <input class="popup__form-input" type="text" placeholder="Название" name="name" id="inputPlaceName" />
-        <input class="popup__form-input" type="text" placeholder="Ссылка на картинку" name="job" id="inputLink" />
+        <input class="popup__form-input" type="text" placeholder="Название" name="name" id="inputPlaceName" minlength="2" maxlength="30" required/>
+        <span id="inputPlaceName-error" class="popup__error_visible"></span>
+        <input class="popup__form-input" type="url" placeholder="Ссылка на картинку" name="job" id="inputLink" required/>
+        <span id="inputLink-error" class="popup__error_visible"></span>
         <button class="popup__submit-button" type="submit" id="popupAddSubmit">Сохранить</button>
       </form>
     </div>  
@@ -73,6 +77,7 @@
       <button class="elements__delete-button" type="button"></button>
     </li>
   </template>
+  <script src="./scripts/validation.js"></script>
   <script src="./scripts/constants.js"></script>
   <script src="./scripts/script.js"></script>
 </body>
