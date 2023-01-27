@@ -22,29 +22,36 @@
   const inputNamePopup = document.querySelector('#inputPlaceName');
   const inputLinkPopup = document.querySelector('#inputLink');
   const addPopupForm = document.querySelector('#popupAddForm');
+  const popupAddSubmit = document.querySelector('#popupAddSubmit');
 
 // универсальная функция открытия попаов
   function openPopup (popup) {
     popup.classList.add('popup_is-opened');
-    
-    document.addEventListener('keydown', (e) => {
-      if (e.key === "Escape") {
-        closePopup (popup);
-      }
-    })
-
-    popup.addEventListener('click', (e) => {
-      if(!e.target.closest('.popup__container')) {
-        closePopup (popup);
-      }
-    })
+    document.addEventListener('keydown', closePopupByEsc);
+    document.addEventListener('mousedown', closePopupByOverlay);  
 }
 
 // универсальная функция закрытия попапов 
   function closePopup (popup) {
+    document.removeEventListener('keydown', closePopupByEsc);
+    document.removeEventListener('mousedown', closePopupByOverlay);
     popup.classList.remove('popup_is-opened');
 }
 
+// закрытие формы кликом на esc
+  const closePopupByEsc = (evt) => {
+    if (evt.key === "Escape") {
+      const popupOpen = document.querySelector('.popup_is-opened')
+      closePopup (popupOpen);
+    }
+  }
+// закрытие формы кликом на оверлэй 
+  const closePopupByOverlay = (evt) => {
+    if(!evt.target.closest('.popup__container')) {
+      const popupOpen = document.querySelector('.popup_is-opened')
+      closePopup (popupOpen);
+    }
+  }
 // функция меняет значения в форме редактора профиля 
   const editFormSubmitHandler = (evt) => {
     evt.preventDefault();
@@ -117,13 +124,15 @@
   addCardButton.addEventListener('click', function () {
     openPopup(popupAddCard);
     addPopupForm.reset();
+    popupAddSubmit.setAttribute('disabled', 'true');
+    popupAddSubmit.classList.add('popup__submit-button_invalid');
   })
 
 // вешаем обработчик событий для всех кнопок закрытия формы
   popupCloseButtons.forEach((button) => {
     button.addEventListener('click', event => {
-      const closestButton = event.target.closest('.popup');
-      closePopup (closestButton);
+      const popup = event.target.closest('.popup');
+      closePopup (popup);
     });
   }) 
 
