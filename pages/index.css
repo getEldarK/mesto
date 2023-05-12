@@ -41,6 +41,6 @@
 @import url(../blocks/popup/__submit-button/_invalid/popup__submit-button_invalid.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/_is-opened/popup_is-opened.css);
-@import url(../blocks/popup/_open-img/popup_open-img.css);
+@import url(../blocks/popup/_opened-big-img/popup_opened-big-img.css);
 @import url(../blocks/popup/__error/__error_visible/popup__error_visible.css);
 @import url(../blocks/popup/__error/popup__error.css);

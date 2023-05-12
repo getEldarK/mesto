@@ -1,34 +1,9 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-export const initialCards = [
-  {
-    name: 'Уфа',
-    link: 'https://ufa.dixinews.ru/upload/iblock/821/8218012bfe009c9eda0431d4a68dd9db.jpg'
-  },
-  {
-    name: 'Йошкар-Ола',
-    link: 'https://static.tonkosti.ru/tonkosti/table_img/g192/9d9d/263173325.jpg'
-  },
-  {
-    name: 'Казань',
-    link: 'https://images.unsplash.com/photo-1570720285196-7d31a750b34c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGthemFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
-  },
-  {
-    name: 'Самара',
-    link: 'https://images.unsplash.com/photo-1617080371806-cd01d35ac4c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80'
-  },
-  {
-    name: 'Казань',
-    link: 'https://images.unsplash.com/photo-1592961132324-4f09bb682ec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-  },
-  {
-    name: 'Уфа',
-    link: 'https://images.unsplash.com/photo-1631080296671-f07c60f187d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80'
-  }
-]; 
+import { initialCards } from './initialCards.js';
 
 // Объявление переменных
-  const popup = document.querySelector('.popup');
+  const popupElements = document.querySelector('.popup');
   const profileName = document.querySelector('.profile__name');
   const profileJob = document.querySelector('.profile__job');
   const inputNameValue = document.querySelector('#inputName');
@@ -37,15 +12,13 @@ export const initialCards = [
   const editProfileButton = document.querySelector('.profile__button-edit');
   const popupAddCard = document.querySelector('.popup_add-card');
   const addCardButton = document.querySelector('.profile__add-button');
-  const addCardNameValue = document.querySelector('#inputPlaceName');
-  const addCardLinkValue = document.querySelector('#inputLink');
   const popupCloseButtons = document.querySelectorAll('.popup__close-button');
   const popupEditForm = document.querySelector('#popupEditForm');
   export const cardList = document.querySelector('.elements__list');
   const template = document.querySelector('#template').content.querySelector('.elements__items');
   const listImage = document.querySelector('.elements__image');
   export const titlePopupPicture = document.querySelector('.popup__img-title');
-  export const popupOpenImage = document.querySelector('.popup_open-img');
+  export const popupOpenImage = document.querySelector('.popup_opened-big-img');
   export const popupPicture = popupOpenImage.querySelector('.popup__picture');
   const imgPopupCloseBtn = document.querySelector('#closeButton');
   const inputNamePopup = document.querySelector('#inputPlaceName');
@@ -106,22 +79,6 @@ export const initialCards = [
     }) 
   }  
 
-// функиця создания карточек из щаблона template
-  // function createCard(item) {
-  //   const templateCards = template.cloneNode(true);
-  //   const likeButton = templateCards.querySelector('.elements__like-button');
-  //   const deleteButton = templateCards.querySelector('.elements__delete-button');
-  //   deleteButton.addEventListener('click', handleDeleteButtonClick);
-  //   likeButton.addEventListener('click', handleLikeButtonClick);
-  //   const templateCardsTitle = templateCards.querySelector('.elements__title');
-  //   templateCardsTitle.textContent = item.name;
-  //   const templateCardsImage = templateCards.querySelector('.elements__image');
-  //   templateCardsImage.setAttribute('src', item.link);
-  //   templateCardsImage.setAttribute('alt', 'users photo place');
-  //   templateCardsImage.addEventListener('click', () => openImgPopup(item));
-  //   return templateCards;
-  // }  
-
 // функция лайка карточки
   const handleLikeButtonClick = (e) => {
     e.target.classList.toggle('active');
@@ -131,11 +88,6 @@ export const initialCards = [
   const handleDeleteButtonClick = (e) => {
     e.target.closest('.elements__items').remove();
   }
-
-  // initialCards.forEach(function(item){
-  //   const element = createCard(item);
-  //   cardList.append(element);
-  // });
 
 // функция открывает форму с увеличенным изображением карточки 
   export const openImgPopup = (data) => {
@@ -159,7 +111,7 @@ export const initialCards = [
     openPopup(popupAddCard);
     addPopupForm.reset();
     popupAddSubmit.setAttribute('disabled', 'true');
-    popupAddSubmit.classList.add('popup__submit-button_invalid');
+    addFormValidation.disableButton()
   })
 
 // вешаем обработчик событий для всех кнопок закрытия формы
@@ -169,6 +121,13 @@ export const initialCards = [
       closePopup (popup);
     });
   }) 
+
+  initialCards.forEach((item) => {
+    const card = new Card(item, '#template', openImgPopup);
+    const cardElement = card.generateCard();
+
+    cardList.append(cardElement);
+})
 
   const config = {
     formSelector: '.popup__form',

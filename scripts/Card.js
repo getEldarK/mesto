@@ -1,4 +1,5 @@
-import {initialCards, openImgPopup, cardList, openPopup, popupOpenImage, popupPicture, titlePopupPicture} from './script.js';
+import { openImgPopup, cardList, openPopup, popupOpenImage, popupPicture, titlePopupPicture } from './index.js';
+
 
 export default class Card {
     constructor(data, templateSelector, openPopupImg) {
@@ -22,6 +23,7 @@ export default class Card {
         this._setEventListeners();
 
         this._element.querySelector('.elements__image').src = this._link;
+        this._element.querySelector('.elements__image').alt = this._name;
         this._element.querySelector('.elements__title').textContent = this._name;
 
         return this._element;
@@ -42,6 +44,7 @@ export default class Card {
     _handleOpenPopupImg() {
         openPopup(popupOpenImage);
         popupPicture.src = this._link;
+        popupPicture.alt = this._name;
         titlePopupPicture.textContent = this._name;
     }
     _handleLikeButton() {
@@ -54,10 +57,5 @@ export default class Card {
     }
 } 
 
-initialCards.forEach((item) => {
-    const card = new Card(item, '#template', openImgPopup);
-    const cardElement = card.generateCard();
 
-    cardList.append(cardElement);
-})
 
