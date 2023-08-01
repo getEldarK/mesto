@@ -39,12 +39,6 @@ export default class Card {
         })
     }
 
-    // _handleOpenPopupImg() {
-    //     openPopup(popupOpenImage);
-    //     popupPicture.src = this._link;
-    //     popupPicture.alt = this._name;
-    //     titlePopupPicture.textContent = this._name;
-    // }
     _handleLikeButton() {
         this._element.querySelector('.elements__like-button')
         .classList.toggle('elements__like-button_active');

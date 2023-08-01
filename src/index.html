@@ -5,15 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>сервис Mesto</title>
-	<link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
   <header class="header">
-    <img class="header__logo" src="./images/logo_mesto_header.png" alt="Логотип сервиса Место">
+    <img class="header__logo" src="<%=require('./images/logo_mesto_header.png')%>" alt="Логотип сервиса Место">
   </header>
   <main>
     <section class="profile">
-      <img class="profile__image" src="./images/kusto_image.jpg" alt="Фотография Жак-Ива Кусто">
+      <img class="profile__image" src="<%=require('./images/kusto_image.jpg')%>" alt="Фотография Жак-Ива Кусто">
       <div class="profile__info">
         <div class="profile__title">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -22,7 +21,7 @@
         <p class="profile__job">Исследователь океана</p>
       </div>
       <button class="profile__add-button" type="button">
-        <img class="profile__add-button-vector" src="./images/plus_veclor_button.png" alt="элемент кнопка добавить">
+        <img class="profile__add-button-vector" src="<%=require('./images/plus_veclor_button.png')%>" alt="элемент кнопка добавить">
       </button>
     </section>
     <section class="elements">
@@ -75,6 +74,5 @@
       <button class="elements__delete-button" type="button"></button>
     </li>
   </template>
-  <script type="module" src="./pages/index.js"></script>
 </body>
 </html>
