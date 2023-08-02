@@ -18,7 +18,6 @@ import {
   popupBigImage,
   editProfileButton,
   addCardButton,
-  addPopupForm,
   popupAddSubmit
 } from '../scripts/utils/constants.js';
   
@@ -68,8 +67,6 @@ popupAddCard.setEventListeners();
 addCardButton.addEventListener('click', function (evt) {
   evt.preventDefault();
   popupAddCard.open();
-  addPopupForm.reset();
-  popupAddSubmit.setAttribute('disabled', 'true');
   addFormValidation.disableButton();
 })
 const addFormValidation = new FormValidator(config, popupAddNewCard);
