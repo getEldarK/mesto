@@ -6,6 +6,7 @@ import { initialCards } from '../scripts/initialCards.js';
 import Section from '../scripts/components/Section.js';
 import PopupWithImage from '../scripts/components/PopupWithImage.js';
 import PopupWithForm from '../scripts/components/PopupWithForm.js';
+import PopupWithConfirmation from '../scripts/components/PopupWithConfirmation.js';
 import UserInfo from '../scripts/components/UserInfo.js';
 import {
   config,
@@ -18,7 +19,11 @@ import {
   popupBigImage,
   editProfileButton,
   addCardButton,
-  popupAddSubmit
+  popupAddSubmit,
+  popupAvatar,
+  popupAvatarButton,
+  avatar,
+  popupDeleteCard
 } from '../scripts/utils/constants.js';
   
 
@@ -72,7 +77,21 @@ addCardButton.addEventListener('click', function (evt) {
 const addFormValidation = new FormValidator(config, popupAddNewCard);
   addFormValidation.enableValidation();
 
+//создание попапа редактирование аватара профиля
 
+const popupEditAvatar = new PopupWithForm(popupAvatar, {
+  handleSubmitForm: (formData) => {
+  avatar.src = formData.avatar;
+  popupEditAvatar.close();
+  }
+});
+popupEditAvatar.setEventListeners();
+
+popupAvatarButton.addEventListener('click', () => {
+  popupEditAvatar.open();
+})
+const avatarFormValidation = new FormValidator(config, popupAvatar);
+avatarFormValidation.enableValidation();
 
   const handleCardClick = function (name, link) {
     openPopupImg.open(name, link);
@@ -94,3 +113,7 @@ const addFormValidation = new FormValidator(config, popupAddNewCard);
 // popup big image card declaration
   const openPopupImg = new PopupWithImage(popupBigImage);
   openPopupImg.setEventListeners();
+
+// Попап удаления карточки 
+const deleteCardPopup = new PopupWithConfirmation(popupDeleteCard);
+deleteCardPopup.setEventListeners();

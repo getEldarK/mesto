@@ -9,6 +9,10 @@ export const editProfileButton = document.querySelector('.profile__button-edit')
 export const addCardButton = document.querySelector('.profile__add-button');
 export const addPopupForm = document.querySelector('#popupAddForm');
 export const popupAddSubmit = document.querySelector('#popupAddSubmit');
+export const popupAvatar = document.querySelector('.popup_avatar-profile');
+export const popupAvatarButton = document.querySelector('.profile__image-btn');
+export const avatar = document.querySelector('.profile__image');
+export const popupDeleteCard = document.querySelector('.popup_delete-confirm');
 
 export const config = {
     formSelector: '.popup__form',

@@ -12,7 +12,8 @@
   </header>
   <main>
     <section class="profile">
-      <img class="profile__image" src="<%=require('./images/kusto_image.jpg')%>" alt="Фотография Жак-Ива Кусто">
+      <img class="profile__image" src="<%=require('./images/kusto_image.jpg')%>" alt="Аватар профиля">
+      <button class="profile__image-btn" type="button"></button>
       <div class="profile__info">
         <div class="profile__title">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -31,6 +32,17 @@
   <footer class="footer">
     <p class="footer__copyright">© 2022 Mesto Russia</p>
   </footer>
+  <section class="popup popup_avatar-profile">
+    <div class="popup__container">
+      <h2 class="popup__title">Обновить аватар</h2>
+      <button class="popup__close-button" type="button"></button>
+      <form class="popup__form" name="myForm" id="popupAvatarForm">
+          <input class="popup__form-input" type="url" placeholder="Ссылка на картинку" name="avatar" id="avatar" minlength="2" maxlength="200" required/>
+          <span id="avatar-error" class="popup__error"></span>
+          <button type="submit" class="popup__submit-button">Сохранить</button>
+      </form>
+    </div>
+  </section>
   <section class="popup popup_edit-profile" id="popup_edit-profile">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -57,6 +69,19 @@
       </form>
     </div>  
   </section>
+
+
+  <section class="popup popup_delete-confirm">
+    <div class="popup__container">
+      <h2 class="popup__title">Вы уверены?</h2>
+      <button class="popup__close-button" type="button"></button>
+      <form class="popup__form" name="myForm" id="popupAddForm"> 
+        <button class="popup__submit-button" type="submit" id="popupAddSubmit" disabled>Да</button>
+      </form>
+    </div>  
+  </section>
+
+
   <section class="popup popup_opened-big-img" id="popup-big-img">
     <div class="popup__img-container">
       <button class="popup__close-button" type="button" id="closeButton"></button>
