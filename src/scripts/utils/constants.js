@@ -12,7 +12,16 @@ export const popupAddSubmit = document.querySelector('#popupAddSubmit');
 export const popupAvatar = document.querySelector('.popup_avatar-profile');
 export const popupAvatarButton = document.querySelector('.profile__image-btn');
 export const avatar = document.querySelector('.profile__image');
-export const popupDeleteCard = document.querySelector('.popup_delete-confirm');
+export const popupDeleteConfirm = document.querySelector('.popup_delete-confirm');
+export const deleteButton = document.querySelector('.elements__delete-button');
+
+export const options = {
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-73',
+  headers: {
+      authorization: '7985b9ea-9f65-44b2-8d79-d83922b996e9',
+      'Content-Type': 'application/json'
+  }
+}
 
 export const config = {
     formSelector: '.popup__form',

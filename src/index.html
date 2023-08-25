@@ -12,14 +12,14 @@
   </header>
   <main>
     <section class="profile">
-      <img class="profile__image" src="<%=require('./images/kusto_image.jpg')%>" alt="Аватар профиля">
+      <img class="profile__image" src="#" alt="Аватар профиля">
       <button class="profile__image-btn" type="button"></button>
       <div class="profile__info">
         <div class="profile__title">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name"></h1>
           <button class="profile__button-edit" type="button"></button>
         </div>
-        <p class="profile__job">Исследователь океана</p>
+        <p class="profile__job"></p>
       </div>
       <button class="profile__add-button" type="button">
         <img class="profile__add-button-vector" src="<%=require('./images/plus_veclor_button.png')%>" alt="элемент кнопка добавить">
@@ -61,9 +61,9 @@
       <h2 class="popup__title">Новое место</h2>
       <button class="popup__close-button" type="button"></button>
       <form class="popup__form" name="myForm" id="popupAddForm"> 
-        <input class="popup__form-input" type="text" placeholder="Название" name="name" id="inputPlaceName" minlength="2" maxlength="30" required/>
+        <input class="popup__form-input" type="text" placeholder="Название" name="name" id="inputPlaceName" required/>
         <span id="inputPlaceName-error" class="popup__error"></span>
-        <input class="popup__form-input" type="url" placeholder="Ссылка на картинку" name="place" id="inputLink" required/>
+        <input class="popup__form-input" type="url" placeholder="Ссылка на картинку" name="link" id="inputLink" required/>
         <span id="inputLink-error" class="popup__error"></span>
         <button class="popup__submit-button" type="submit" id="popupAddSubmit" disabled>Сохранить</button>
       </form>
