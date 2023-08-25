@@ -71,6 +71,21 @@ const createCard = (data) => {
     data,
     handleCardClick,
     handleLikeCard,
+    handleDeleteCard: (evt) => {
+      const cardElement = evt.target.closest('.elements__items');
+      const cardId = addCard.getCardId();
+      popupConfirmDelete.changeHandleSubmitForm((e) => {
+      e.preventDefault();
+      api.deleteCard(cardId)
+      .then(() => {
+        cardElement.remove();
+        popupConfirmDelete.close();
+      })
+      .catch((err) => console.log(err))
+  })
+
+  popupConfirmDelete.open();
+    },
     userId
     
   }, '#template')
@@ -164,6 +179,23 @@ popupAvatarButton.addEventListener('click', () => {
 
 const avatarFormValidation = new FormValidator(config, popupAvatar);
 avatarFormValidation.enableValidation();
+
+const handleDeleteCard = (evt) => {
+  // const cardElement = evt.target.closest('.elements__items');
+  // console.log(cardId);
+  // const cardId = card.getCardId();
+  // popupConfirmDelete.changeHandleSubmitForm((evt) => {
+  //   evt.preventDefault();
+  //   api.deleteCard(cardId)
+  //     .then(() => {
+  //       cardElement.remove();
+  //       popupConfirmDelete.close();
+  //     })
+  //     .catch((err) => console.log(err))
+  // })
+
+  // popupConfirmDelete.open();
+}
 
 
 

@@ -14,13 +14,9 @@ export default class Card {
         this._handleDeleteCard = handleDeleteCard;
     }
 
-    deleteCard = () => {
-        this._element.remove();
-      };
-    
-    _confirmDeleteCard = () => {
-        this._handleDeleteCard();
-      };
+    getCardId() {
+        return this._cardId;
+      }
 
     _getTemplate() {
         const cardElement = document
@@ -50,6 +46,10 @@ export default class Card {
         return this._element;
     }
 
+    // _deleteCard() {
+    //     console.log(2)
+    // }
+
     isLiked() {
         return this._data.likes.some((item) => {
             return item._id === this._userId
@@ -73,7 +73,7 @@ export default class Card {
     }
 
     _setEventListeners() {
-        
+       
         this._cardlikeButton.addEventListener('click', () => {
             this._handleLikeCard(this);
         });
@@ -82,8 +82,9 @@ export default class Card {
             this._handleCardClick(this._name, this._link);
         })
 
-        this._deleteButton.addEventListener('click', () => {
-            this._confirmDeleteCard()
+        this._deleteButton.addEventListener('click', (evt) => {
+            console.log(1)
+            this._handleDeleteCard(evt)
         })
     }
 
