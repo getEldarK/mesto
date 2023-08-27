@@ -14,6 +14,9 @@ export default class Card {
         this._handleDeleteCard = handleDeleteCard;
     }
 
+    getUserId() {
+        return this._data._id;
+    }
 
     _getTemplate() {
         const cardElement = document
@@ -53,10 +56,10 @@ export default class Card {
             this._handleCardClick(this._name, this._link) 
         })
 
-        this._deleteButton.addEventListener('click', () => {
+        if (this._userId === this._ownerId) {
+            this._deleteButton.addEventListener('click', () => this._handleDeleteCard(this));
             console.log(1)
-            this._handleDeleteCard() 
-        })
+        }
     }
 
 
@@ -108,9 +111,7 @@ export default class Card {
         
     // }
 
-    getUserIdLikes() {
-        return this._data._id;
-    }
+   
 
     // delete() {
     //     this._element.remove()

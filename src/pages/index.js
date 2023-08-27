@@ -70,40 +70,43 @@ const cards = new Section ({
   }, 
 },'.elements__list');
   
-  
-  const handleCardClick = (title, picture) => {
-    popupWithImage.open(title, picture);
-  }
   const popupWithImage = new PopupWithImage(popupBigImage);
   popupWithImage.setEventListeners();
 
+  const handleCardClick = (title, picture) => {
+    popupWithImage.open(title, picture);
+  }
+
+
 
   function handleLikeCard(instance) {
-    api.changeLike(instance.getUserIdLikes(), instance.isLiked())
+    api.changeLike(instance.getUserId(), instance.isLiked())
       .then(dataCardFromServer => {
         instance.setLikesData(dataCardFromServer)
       })
     console.log(instance)
   }
 
-
+  const popupConfirmDelete = new PopupConfirmDelete(popupDeleteConfirm, null);
+  popupConfirmDelete.setEventListeners();
+  
 // Удаление карточки
-const handleDeleteCard = () => {
+function handleDeleteCard (instanceCard) {
   popupConfirmDelete.open();
-}
 
-const handleFormSubmit = (instance) => {
   popupConfirmDelete.onSubmit(() => {
-    api.deleteCard(instance.getUserIdLikes())
+    api.deleteCard(instanceCard.getUserId())
       .then(() => {
-        instance.remove();
+        instanceCard.remove();
         popupConfirmDelete.close();
       })
       .catch((err) => console.log(err));
   })
 }
-const popupConfirmDelete = new PopupConfirmDelete(popupDeleteConfirm, handleFormSubmit);
-popupConfirmDelete.setEventListeners();
+  
+
+
+
 
 
 // popup edit profile declaration

@@ -2,22 +2,24 @@
 import Popup from "./Popup.js";
 
 export default class PopupConfirmDelete extends Popup {
-    constructor(popupSelector, handleFormSubmit) {
+    constructor(popupSelector, handleCardSubmit = null) {
         super(popupSelector);
-        this._handleFormSubmit = handleFormSubmit;
+        this._handleCardSubmit = handleCardSubmit;
         this._formElement = this._popup.querySelector('.popup__form');
     }
 
+
     onSubmit(callback) {
-        this.handleFormSubmit = callback;
-     }
+        this.handleCardSubmit = callback;
+    }
 
     setEventListeners() {
         super.setEventListeners()
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
+            this._handleCardSubmit();
+            
             console.log('сабмит тест');
-            this._handleFormSubmit();
         });
     }
 }
