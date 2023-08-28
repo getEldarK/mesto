@@ -10,7 +10,7 @@ export default class PopupConfirmDelete extends Popup {
 
 
     onSubmit(callback) {
-        this.handleCardSubmit = callback;
+        this._handleCardSubmit = callback;
     }
 
     setEventListeners() {
