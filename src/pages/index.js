@@ -181,7 +181,7 @@ popupEditAvatar.setEventListeners();
 popupAvatarButton.addEventListener('click', (evt) => {
   evt.preventDefault();
   popupEditAvatar.open();
-  addFormValidation.disableButton();
+  avatarFormValidation.disableButton();
 })
 
 
